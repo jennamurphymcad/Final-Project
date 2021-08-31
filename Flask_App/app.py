@@ -1,6 +1,3 @@
-from sqlalchemy import create_engine
-from flask import Flask, render_template, jsonify
-# import get_data
 from flask import Flask,request, url_for, redirect, render_template, jsonify
 # from pycaret.regression import *
 import pandas as pd
@@ -20,26 +17,26 @@ def data():
 
     return render_template("data.html")
    
-@app.route("/comparisons")
-def comparisons():
-    return render_template("comparisons.html")
+@app.route("/test")
+def test():
+    return render_template("test.html")
 
-
-@app.route('/comparisons', methods=['POST'])
-def my_form_post():
-    variable = request.form['variable']
-    print(variable)
-    # return variable
 # @app.route('/predict',methods=['POST'])
 # def predict():
+#     int_features = [x for x in request.form.values()]
+#     final = np.array(int_features)
+#     data_unseen = pd.DataFrame([final], columns = cols)
+#     prediction = predict_model(model, data=data_unseen, round = 0)
+#     prediction = int(prediction.Label[0])
+#     return render_template('home.html',pred='Expected Bill will be {}'.format(prediction))
 
-# #     # print(int_features)
-# #     # final = np.array(int_features)
-#     return render_template('comparisons.html')
-
-#     # data_unseen = pd.DataFrame([final], columns = cols)
-#     # prediction = predict_model(model, data=data_unseen, round = 0)
-#     # prediction = int(prediction.Label[0])
+# @app.route('/predict_api',methods=['POST'])
+# def predict_api():
+#     data = request.get_json(force=True)
+#     data_unseen = pd.DataFrame([data])
+#     prediction = predict_model(model, data=data_unseen)
+#     output = prediction.Label[0]
+#     return jsonify(output)
 
 if __name__ == '__main__':
     app.run(debug=True)
