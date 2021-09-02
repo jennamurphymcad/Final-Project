@@ -1,8 +1,11 @@
 from flask import Flask,request, url_for, redirect, render_template, jsonify, request
-# from pycaret.regression import *
 import pandas as pd
-# import pickle
-import numpy as np
+import nlp_app
+
+# Train and build model
+vectorizer = nlp_app.vectorizer_fit()
+X_Train_vect = nlp_app.transform(vectorizer)
+grid = nlp_app.train_nlp_model(X_Train_vect)
 
 # Flask Setup
 app = Flask(__name__)
@@ -37,10 +40,13 @@ def predict_api():
 #     data_unseen = pd.DataFrame([final], columns = cols)
 #     prediction = predict_model(model, data=data_unseen, round = 0)
 #     prediction = int(prediction.Label[0])
-    print(tweet_text)
+    
+    # Vectorize / transform tweet / predict
+    tweet_vect = nlp_app.transform_tweet(vectorizer, tweet_text)
+    prediction = nlp_app.make_prediction(grid, tweet_vect)
 
 
-    return render_template("test.html", pred=tweet_text)
+    return render_template("test.html", pred=prediction)
 
 
 if __name__ == '__main__':
