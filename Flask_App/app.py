@@ -46,7 +46,7 @@ def predict_api():
     prediction = nlp_app.make_prediction(grid, tweet_vect)
 
 
-    return render_template("test.html", pred=prediction)
+    return render_template("test.html", pred=prediction, tweet=tweet_text[0])
 
 
 if __name__ == '__main__':
