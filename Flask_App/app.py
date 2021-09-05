@@ -33,6 +33,26 @@ def test():
 #     prediction = int(prediction.Label[0])
 #     return render_template('home.html',pred='Expected Bill will be {}'.format(prediction))
 
+@app.route("/test_csv_data")
+def test_csv_data():
+    df_test = pd.read_csv("../data/test.csv")
+    tweet_list = []
+
+    for index, tweet in enumerate(df_test["text"].values):
+        temp_list = []
+        if index %300==0: 
+            tweet_vect = nlp_app.transform_tweet(vectorizer, [tweet])
+            prediction = nlp_app.make_prediction(grid, tweet_vect)
+            temp_list.append(index)
+            temp_list.append(tweet)
+            temp_list.append(prediction)
+            tweet_list.append(temp_list)
+        else:
+            pass
+
+
+    return render_template("test-csv-data.html", tweet_list=tweet_list)
+
 @app.route('/predict_api', methods=['POST', 'GET'])
 def predict_api():
     tweet_text = [x for x in request.form.values()]
