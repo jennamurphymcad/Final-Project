@@ -62,7 +62,52 @@
         <div class="col-lg-12 col-md-12">
           <!-- <img src="#" alt="Main Fig Example"> -->
           <p>
-            Predict which tweets are about real disasters and which are not. This is a Kaggle Machine Learning competition which we will enter to see how our model performs. Create a web application that a user interacts with to see how our model performs, TBD if the user inputs or selects from existing tweets.
+            Twitter has become an important communication channel in times of emergency. 
+            Since nearly everyone has a smartphone, people can "announce" an emergency they’re observing in real-time. 
+            Because of this, more agencies are interested in programatically monitoring Twitter (i.e. disaster relief organizations and news agencies).
+            But, it’s not always clear whether a person’s words are actually announcing a disaster. Take this example:
+            <hr>
+            INSERT IMAGE
+            <hr>
+            This project attempts to predict which tweets are about real disasters and which are not. 
+            The dataset is from a Kaggle Machine Learning competition.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <!-- <img src="#" alt="Main Fig Example"> -->
+          <h2>Dataset</h2>
+          <p>The overall dataset contains 10,000 tweets of which 7,613 are the training dataset and have been classified (by a human) as "emergency" or "emergency".
+            This is known as "supervised model". A further [INSERT NUMBER] are part of a testing dataset for which the classification is unknown to us.
+            Of the training set 4342 tweets are classified as 0 or "not real" and 3271 are classified as 1 or "real" - the dataset is not perfectly balancec.
+
+            Examples:
+
+            "emergency"
+            "13,000 people receive #wildfires evacuation orders in California"
+            "Forest fire near La Ronge Sask. Canada"
+            "I'm on top of the hill and I can see a fire in the woods..."
+            "I'm afraid that the tornado is coming to our area..."
+
+            "Crying out for more! Set me ablaze"
+            "What a wonderful day!"
+            "#Flood in Bago Myanmar #We arrived Bago"
+
+          </p>
+
+
+
+          <h2>Methodology</h2>
+          <p>
+            Making predictions such as "real" or "not real" or "good" or "not good" from raw text is known as sentiment analysis.
+            Taking text and analysing in a way that a machine learning model can make prediction is call Natural Language Processing (NLP). 
+            This project uses the python library scikit-learn and [INSERT OTHERS] to analyze the text and make predictions.
+            <hr>
+            <h4>Tokenization</h4>
+            <hr>
+            This project attempts to predict which tweets are about real disasters and which are not. 
+            The dataset is from a Kaggle Machine Learning competition [INSERT LINK]
           </p>
         </div>
       </div>
