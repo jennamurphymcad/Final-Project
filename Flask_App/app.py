@@ -18,8 +18,25 @@ def index():
 
 @app.route("/data")
 def data():
+    df_train = pd.read_csv("../data/train.csv")
+    df_train_short = df_train.sample(n=100)
+    train_list = []
 
-    return render_template("data.html")
+    for id, keyword, location, text, target in (df_train_short.values):
+        temp_list = []
+        if index: 
+    #         tweet_vect = nlp_app.transform_tweet(vectorizer, [tweet])
+    #         prediction = nlp_app.make_prediction(grid, tweet_vect)
+            temp_list.append(str(id))
+            temp_list.append(keyword)
+            temp_list.append(location)
+            temp_list.append(text)
+            temp_list.append(target)
+            train_list.append(temp_list)
+        else:
+            pass
+
+    return render_template("data.html", train_list = train_list)
    
 @app.route("/test")
 def test():
