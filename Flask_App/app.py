@@ -1,6 +1,7 @@
 from flask import Flask,request, url_for, redirect, render_template, jsonify, request
 import pandas as pd
 import nlp_app
+import random
 
 # Train and build model
 vectorizer = nlp_app.vectorizer_fit()
@@ -38,20 +39,60 @@ def test_csv_data():
     df_test = pd.read_csv("../data/test.csv")
     tweet_list = []
 
-    for index, tweet in enumerate(df_test["text"].values):
-        temp_list = []
-        if index %300==0: 
-            tweet_vect = nlp_app.transform_tweet(vectorizer, [tweet])
-            prediction = nlp_app.make_prediction(grid, tweet_vect)
-            temp_list.append(index)
-            temp_list.append(tweet)
-            temp_list.append(prediction)
-            tweet_list.append(temp_list)
-        else:
-            pass
+    # def random_index():
+    #     length = len(df_test["text"].values)
+    #     random_int = random.randint(0,length)
+    #     tweet_list_creator(random_int)
+
+    # def tweet_list_creator(random_int):
+
+    for index, tweet in enumerate(df_test["text"].sample(n=11).values):
+            # random_index = random.sample(index,10)
+            temp_list = []
+            if index:
+
+            # if index[random_int] == index: 
+                tweet_vect = nlp_app.transform_tweet(vectorizer, [tweet])
+                prediction = nlp_app.make_prediction(grid, tweet_vect)
+                # temp_list.append(index)
+                temp_list.append(tweet)
+                temp_list.append(prediction)
+                tweet_list.append(temp_list)
+            else:
+                pass
 
 
     return render_template("test-csv-data.html", tweet_list=tweet_list)
+
+@app.route("/forward/", methods=['POST'])
+
+def move_forward():
+    df_test = pd.read_csv("../data/test.csv")
+    tweet_list = []
+
+    # def random_index():
+    #     length = len(df_test["text"].values)
+    #     random_int = random.randint(0,length)
+    #     tweet_list_creator(random_int)
+
+    # def tweet_list_creator(random_int):
+
+    for index, tweet in enumerate(df_test["text"].sample(n=11).values):
+            # random_index = random.sample(index,10)
+            temp_list = []
+            if index:
+
+            # if index[random_int] == index: 
+                tweet_vect = nlp_app.transform_tweet(vectorizer, [tweet])
+                prediction = nlp_app.make_prediction(grid, tweet_vect)
+                # temp_list.append(index)
+                temp_list.append(tweet)
+                temp_list.append(prediction)
+                tweet_list.append(temp_list)
+            else:
+                pass
+    forward_message = "Moving Forward..."
+    return render_template('test-csv-data.html', forward_message=forward_message, tweet_list = tweet_list);
 
 @app.route('/predict_api', methods=['POST', 'GET'])
 def predict_api():
