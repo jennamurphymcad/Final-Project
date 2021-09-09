@@ -44,16 +44,24 @@ div.vis-main-summary, div.max-temp-summary, div.humidity-summary, div.cloud-summ
     margin-right: .75rem;
 }
 
-div.vis-main-summary img {
+/* div.vis-main-summary img {
     float: left;
     max-width: 40%;
-}
+} */
 
 div.vis-side-navigation {
     width: 29%;
     float: right;
 }
 div.vis-side-navigation img {
+    max-width: 100%;
+}
+
+img {
+    display: block;  
+    margin-left: auto;  
+    margin-right: auto;  
+    padding: 5px;  
     max-width: 100%;
 }
 
