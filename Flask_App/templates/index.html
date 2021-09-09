@@ -82,32 +82,32 @@
             This is known as "supervised model". A further [INSERT NUMBER] are part of a testing dataset for which the classification is unknown to us.
             Of the training set 4342 tweets are classified as 0 or "not real" and 3271 are classified as 1 or "real" - the dataset is not perfectly balancec.
 
-            Examples:
+            <ul>Tweet text examples:
+            <br>
+            
+            <li>"13,000 people receive #wildfires evacuation orders in California"</li>
+            <li>"Forest fire near La Ronge Sask. Canada"</li>
+            <Li>"I'm on top of the hill and I can see a fire in the woods..."</Li>
+            <li>"I'm afraid that the tornado is coming to our area..."</li>
 
-            "emergency"
-            "13,000 people receive #wildfires evacuation orders in California"
-            "Forest fire near La Ronge Sask. Canada"
-            "I'm on top of the hill and I can see a fire in the woods..."
-            "I'm afraid that the tornado is coming to our area..."
-
-            "Crying out for more! Set me ablaze"
-            "What a wonderful day!"
-            "#Flood in Bago Myanmar #We arrived Bago"
+            <li>"Crying out for more! Set me ablaze"</li>
+            <li>"What a wonderful day!"</li>
+            <li>"#Flood in Bago Myanmar #We arrived Bago"</li>
 
           </p>
-
+          </ul>
 
 
           <h2>Methodology</h2>
           <p>
-            Making predictions such as "real" or "not real" or "good" or "not good" from raw text is known as sentiment analysis.
+            Making predictions such as "real" or "not real" or "good" or "not good" from raw text is a classification problem.
             Taking text and analysing in a way that a machine learning model can make prediction is call Natural Language Processing (NLP). 
             This project uses the python library scikit-learn and [INSERT OTHERS] to analyze the text and make predictions.
             <hr>
             <h4>Tokenization</h4>
             <hr>
-            This project attempts to predict which tweets are about real disasters and which are not. 
-            The dataset is from a Kaggle Machine Learning competition [INSERT LINK]
+            Tokenization converts the dataset to a list of individual unique tokens (known as the vocabulary- most of which will be words.
+            With no filtering this dataset has 21,637 tokens.            
           </p>
         </div>
       </div>
