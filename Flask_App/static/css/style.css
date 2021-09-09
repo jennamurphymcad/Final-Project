@@ -1,6 +1,3 @@
-/* Large and X-Large default CSS */
-/* Nav Bar Changes to match reference images from gitlab */
-
 
 .navbar {
     margin: 0px;
@@ -12,7 +9,7 @@
 }
 
 a.navbar-brand {
-    background-color: #20b2aa;
+    background-color: #1DA1F2;
     color: #fff!important;
     padding: .75rem;
     max-height: 100%!important;
@@ -71,7 +68,7 @@ div.comparison-container img, div.max-temp-summary img, div.humidity-summary img
 }
 
 h1, h2, h3 {
-    color: #20b2aa;
+    color: #1DA1F2;
     font-family: 'Roboto Slab', serif;
 }
 h3 {
@@ -82,6 +79,36 @@ hr {
     border-radius: 5px;
     width: 100%;
 }
+
+input {
+    width: 78%;
+    padding: 12px;
+    float: left;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 4px; */
+    /* resize: vertical; */
+  }
+
+  button {
+    /* background-color: #4CAF50;
+    color: white; */
+    padding: 12px 20px !important;
+    /* border: none;
+    border-radius: 4px; */
+    cursor: pointer;
+    float: right;
+    width: 20%;
+  }
+
+  p.test-p {
+    text-align: center;
+    /* font-weight: bold; */
+    font-size: 24px;
+  }
+  
+  /* input[type=submit]:hover {
+    background-color: #45a049;
+  } */
 
 /* table styling */
 tbody td {
@@ -97,7 +124,7 @@ table {
 }
 
 div.active-side-nav {
-    border: 1px solid #20b2aa;
+    border: 1px solid #1DA1F2;
 }
 /* end table styling */
 
@@ -112,7 +139,7 @@ div.active-side-nav {
         margin-right: .75rem;
     }
     .navbar-expand-md {
-        background-color: #20b2aa;
+        background-color: #1DA1F2;
     }
     
     #navbarNavDropdown {
@@ -152,5 +179,24 @@ div.active-side-nav {
         border-bottom: .5px solid #f2f2f2;
         margin-bottom: 1.75rem;
     }
+    input {
+        width: 100%;
+        padding: 12px;
+        float: none;
+        /* border: 1px solid #ccc; */
+        /* border-radius: 4px; */
+        /* resize: vertical; */
+      }
+    
+      button  {
+        /* background-color: #4CAF50;
+        color: white; */
+        padding: 12px 20px !important;
+        /* border: none;
+        border-radius: 4px; */
+        cursor: pointer;
+        float: none;
+        width: 100%;
+      }
 }
   

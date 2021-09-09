@@ -28,7 +28,7 @@
               </li> -->
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Plots
+                  Process
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" href="#">Max-Temp</a></li>
@@ -37,11 +37,17 @@
                   <li><a class="dropdown-item" href="#">Wind Speed</a></li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/test">Test</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Test ML Model
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="/test">Test a Tweet</a></li>
+                  <li><a class="dropdown-item" href="/test_csv_data">Test Submission Data Set</a></li>
+                </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/data">Data</a>
+                <a class="nav-link" href="/data">Train Data</a>
               </li>
 
             </ul>
@@ -66,9 +72,9 @@
             Since nearly everyone has a smartphone, people can "announce" an emergency they’re observing in real-time. 
             Because of this, more agencies are interested in programatically monitoring Twitter (i.e. disaster relief organizations and news agencies).
             But, it’s not always clear whether a person’s words are actually announcing a disaster. Take this example:
-            <hr>
+            <!-- <hr>
             INSERT IMAGE
-            <hr>
+            <hr> -->
             This project attempts to predict which tweets are about real disasters and which are not. 
             The dataset is from a Kaggle Machine Learning competition.
           </p>
@@ -95,7 +101,12 @@
             <li>"#Flood in Bago Myanmar #We arrived Bago"</li>
 
           </p>
+<<<<<<< HEAD
           </ul>
+=======
+          <img src="../static/assets/images/wordcloud.png" alt="wordcloud">
+
+>>>>>>> 10d9c4b51bd78d784e4140b906e7ef2df1d2942e
 
 
           <h2>Methodology</h2>
@@ -109,6 +120,14 @@
             Tokenization converts the dataset to a list of individual unique tokens (known as the vocabulary- most of which will be words.
             With no filtering this dataset has 21,637 tokens.            
           </p>
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+            <img src="../static/assets/images/coefficients.png" alt="Coefficients">
+                  </div>
+            </div>
+            <img src="../static/assets/images/heatmap.png" alt="heatmap">
+          <!-- </div>   -->
         </div>
       </div>
     </div>
@@ -116,25 +135,23 @@
     <!-- side navigation -->
     <div class="container-fluid my-container vis-side-navigation">
       <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
+        <!-- <div class="col-lg-12 col-md-12 col-sm-12">
           <h2>Visualizations</h2>
           <hr>
-        </div>
+        </div> -->
       </div>
 
       <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-3 col-3">
-          <a href="#"><img src="../assets/images/Fig1.png" alt="Fig 1"></a>
+        <div class="col-lg-12 col-md-12 col-sm-3 col-3">
+          <a href="#"><img src="../static/assets/tweet_screenshot.png" alt="Fig 1"></a>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-3 col-3">
           <a href="#"><img src="../assets/images/Fig2.png" alt="Fig 2"></a>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-3 col-3">
           <a href="#"><img src="../assets/images/Fig3.png" alt="Fig 3"></a>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-3 col-3">
-          <a href="#"><img src="../assets/images/Fig4.png" alt="Fig 4"></a>
-        </div>    
+        </div>  
+
       </div>
     </div>
   </main>
