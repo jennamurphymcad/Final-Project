@@ -18,7 +18,7 @@ def index():
 
 @app.route("/data")
 def data():
-    df_train = pd.read_csv("../data/train.csv")
+    df_train = pd.read_csv("data/train.csv")
     df_train_short = df_train.sample(n=100)
     train_list = []
 
@@ -53,7 +53,7 @@ def test():
 
 @app.route("/test_csv_data")
 def test_csv_data():
-    df_test = pd.read_csv("../data/test.csv")
+    df_test = pd.read_csv("data/test.csv")
     tweet_list = []
 
     # def random_index():
@@ -84,7 +84,7 @@ def test_csv_data():
 @app.route("/forward/", methods=['POST'])
 
 def move_forward():
-    df_test = pd.read_csv("../data/test.csv")
+    df_test = pd.read_csv("data/test.csv")
     tweet_list = []
 
     # def random_index():

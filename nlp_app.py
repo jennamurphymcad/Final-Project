@@ -9,7 +9,7 @@ from sklearn.linear_model import LogisticRegression
 
 
 # Import training data into dataframe
-df = pd.read_csv("../data/train.csv")
+df = pd.read_csv("data/train.csv")
 # Format training X (tweet text) set for nlp model 
 X_train = df.text.values
 
