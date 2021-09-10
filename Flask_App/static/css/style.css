@@ -1,4 +1,15 @@
+#navbarNavDropdown ul.navbar-nav {
+    margin-right: 5px;
+}
 
+/* a.nav-link {
+    color: #1DA1F2 !important;
+
+} */
+
+a.nav-link a.active {
+    text-decoration: underline !important;
+}
 .navbar {
     margin: 0px;
     padding-top: 0px!important; 
@@ -44,16 +55,24 @@ div.vis-main-summary, div.max-temp-summary, div.humidity-summary, div.cloud-summ
     margin-right: .75rem;
 }
 
-div.vis-main-summary img {
+/* div.vis-main-summary img {
     float: left;
     max-width: 40%;
-}
+} */
 
 div.vis-side-navigation {
     width: 29%;
     float: right;
 }
 div.vis-side-navigation img {
+    max-width: 100%;
+}
+
+img {
+    display: block;  
+    margin-left: auto;  
+    margin-right: auto;  
+    padding: 5px;  
     max-width: 100%;
 }
 
@@ -89,7 +108,7 @@ input {
     /* resize: vertical; */
   }
 
-  button {
+  #predict {
     /* background-color: #4CAF50;
     color: white; */
     padding: 12px 20px !important;
@@ -110,6 +129,17 @@ input {
     background-color: #45a049;
   } */
 
+  ul.test {
+    width: 700px;
+    list-style-type:none;
+}
+ul.test li {
+    width:180px;
+    margin:15px 0 0 0;
+    padding:0 10px 0 0;
+    line-height:15px;
+    float:left;
+}
 /* table styling */
 tbody td {
     font-size: .75rem;
@@ -126,6 +156,11 @@ table {
 div.active-side-nav {
     border: 1px solid #1DA1F2;
 }
+
+div.main-text {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+}
 /* end table styling */
 
 /* medium screen queries */
@@ -136,7 +171,7 @@ div.active-side-nav {
         width: 100%;
     } */
     button.navbar-toggler {
-        margin-right: .75rem;
+        margin-right: 5px !important;
     }
     .navbar-expand-md {
         background-color: #1DA1F2;
@@ -188,7 +223,7 @@ div.active-side-nav {
         /* resize: vertical; */
       }
     
-      button  {
+      #predict  {
         /* background-color: #4CAF50;
         color: white; */
         padding: 12px 20px !important;

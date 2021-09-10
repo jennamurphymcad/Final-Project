@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../static/css/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width">
 </head>
 
 <body>
@@ -26,16 +27,8 @@
               <!-- <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li> -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Process
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Max-Temp</a></li>
-                  <li><a class="dropdown-item" href="#">Humidity</a></li>
-                  <li><a class="dropdown-item" href="#">Cloudiness</a></li>
-                  <li><a class="dropdown-item" href="#">Wind Speed</a></li>
-                </ul>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Process</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,62 +55,60 @@
         <div class="col-lg-12 col-md-12">
           <h1>Project Summary</h1>
           <hr>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12 col-md-12">
+          <h6>Project by: John Russell, Helen Akinyele, Guy Nasser Bssoume, Frank Duffy and Jenna Murphy</h>
+          <hr>
+        </div> 
+      </div> 
+      <div class="row main-text">
+        <div class="col-lg-12 col-md-12 ">
           <!-- <img src="#" alt="Main Fig Example"> -->
           <p>
-            Twitter has become an important communication channel in times of emergency. Since nearly everyone has a smartphone, people can "announce" an emergency they’re observing in real-time. Because of this, more agencies are interested in programmatically monitoring Twitter (i.e. disaster relief organizations and news agencies). But, it’s not always clear whether a person’s words are actually announcing a disaster. 
-            <!-- <hr>
-            INSERT IMAGE
-            <hr> -->
+            Twitter has become an important communication channel in times of emergency. Since nearly everyone has a smartphone, people can "announce" an emergency they’re observing in real-time. Because of this, more agencies are interested in programmatically monitoring Twitter (i.e. disaster relief organizations and news agencies). But, it’s not always clear whether a person’s words are actually announcing a disaster. </p>
+          <p>
             This project attempts to predict which tweets are about real disasters and which are not. 
             The dataset is from a Kaggle Machine Learning competition.
           </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12 col-md-12">
-          <!-- <img src="#" alt="Main Fig Example"> -->
+        <!-- </div>
+      </div> -->
+        <br>
           <h2>Dataset</h2>
           <p>The overall dataset (corpora) contains 10,000 tweets (documents) of which 7,613 are the training dataset and have been classified (by a human) as "emergency" or "not an emergency". 
-            This is known as "supervised model". A further 3,700 are part of a testing dataset for which the classification is unknown to us. 
-            Of the training set 4342 tweets are classified as 0 or "not an emergency" and 3271 are classified as 1 or "emergency" - the dataset is not perfectly balanced.
-
-            <ul>Tweet text examples:
-            <br>
-            
+            This is known as a "supervised model". A further 3,700 are part of a testing dataset for which the classification is unknown to us. 
+            Of the training set 4,342 tweets are classified as 0 or "not an emergency" and 3,271 are classified as 1 or "emergency" - the dataset is not perfectly balanced.
+          </p>
+          <br>        
+          <h5>Tweet text examples:</h5>
+          <ul>
             <li>"13,000 people receive #wildfires evacuation orders in California"</li>
             <li>"Forest fire near La Ronge Sask. Canada"</li>
             <Li>"I'm on top of the hill and I can see a fire in the woods..."</Li>
             <li>"I'm afraid that the tornado is coming to our area..."</li>
-
             <li>"Crying out for more! Set me ablaze"</li>
             <li>"What a wonderful day!"</li>
             <li>"#Flood in Bago Myanmar #We arrived Bago"</li>
-
-          </p>
           </ul>
+
           <img src="../static/assets/images/wordcloud.png" alt="wordcloud">
+          <br>
+          <p>The Matplotlib Wordcloud represents the text data set by pulling the 200 most frequent or important words. The size and color of the words represent their importance. Wordclouds are often used to visualize the meaning of text datasets.
+          </p>
 
-
-          
+        <br>
           <h2>Methodology</h2>
           <p>
             Making predictions such as "real" or "not real" or "good" or "not good" from raw text is known as a classification problem. 
-            Taking text and analyzing in a way that a machine learning model can make prediction is call Natural Language Processing (NLP). 
+            Taking text and analyzing in a way that a machine learning model can make predictions from is called Natural Language Processing (NLP). 
             This project uses the python library scikit-learn to analyze the text and make predictions.
             <hr>
             <h4>Tokenization</h4>
             <hr>
-            Tokenization converts the dataset to a list of individual unique tokens (known as the vocabulary- most of which will be words.
+            Tokenization converts the dataset to a list of individual unique tokens (known as the vocabulary- most of which will be words).
             With no filtering this dataset has 21,637 tokens.
             <hr>
             <h4>Vectorization</h4>
             <hr>
-            Each document (tweet) is then transformed into a vector with 1 row and 21,637 columns where each column represents a word from the vocabulary.  
-            0s and 1s represent the absence or presence of that particular word.  
+            Each document (tweet) is then transformed into a vector with 1 row and 21,637 columns where each column represents a token from the vocabulary.  
+            0s and 1s represent the absence or presence of that particular token.  
             The corpora consist of a 7613x21637 sparse matrix with 111,497 stored elements in Compressed Sparse Row format.
             <hr>
             <h4>Baselining</h4>
@@ -126,6 +117,7 @@
             The mean cross-validation accuracy is 0.711.  
             After tuning the result by adjusting the regularization parameter C, the cross-validation accuracy is improved to 0.730.
           </p>
+        <br>
           <h2>Improving the Model</h2>
             CountVectorizer extracts tokens using a regular expression "\b\w\w+\b" which finds all sequences of characters that consist of at least 2 letters or numbers (\w) and are separated by word boundaries. 
             It splits contractions like doesn't into doesn and t.  
@@ -139,56 +131,66 @@
             <hr>
             <h4>Rescaling data with tf-idf and n-Grams</h4>
             <hr>
-            Term Frequency (TF) - Inverse Document Frequency (IDF) - give a high weight to any term that appears often in a particular document, but not in very many documents in the corpus. 
-            If a word appears many times in a document, but not in very many documents, it is likely to be descriptive of those documents.
-            The approach up until now has been to discard the word order and only consider a so-called “bag of words”.  
-            Meaning in text also comes from the order of the words and to attempt to simulate this n-Grams which link consecutive words to create new features are created.
-            The heatmap shows cross-validation scores versus 1-1, 1-2, and 1-3 n-Grams versus the hyper-parameter C. 
-            <br>
-            <h2>Conclusions</h2>
-            The model was difficult to improve beyond the initial cross-validation score of 0.73 – even using lemmatization, the td-idf methodology and n-Grams. 
-            The number of features were reduced considerably – almost by a factor of 10 and could have gone much lower with only a minor reduction accuracy. 
-            On larger datasets this would improve the processing time.
-            <br>
-            <br>
-            Perhaps the amount of information contained in a tweet is too small and the critical information is contained in single word.  
-            The above visualization shows the most significant tokens with their model coefficients.
-
-
-
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-            <img src="../static/assets/images/coefficients.png" alt="Coefficients">
-                  </div>
-            </div>
+            <p>Term Frequency (TF) - Inverse Document Frequency (IDF) - give a high weight to any term that appears often in a particular document, but not in very many documents in the corpora. 
+            If a word appears many times in a document, but not in very many documents, it is likely to be descriptive of those documents.</p>
+            <p>The approach up until now has been to discard the word order and only consider a so-called “bag of words”.  
+            Meaning in text also comes from the order of the words and to attempt to simulate this n-Grams which link consecutive words to create new features are created.</p>
             <img src="../static/assets/images/heatmap.png" alt="heatmap">
-          <!-- </div>   -->
+            <p>The heatmap shows cross-validation scores versus 1-1, 1-2, and 1-3 n-Grams versus the hyper-parameter C.</p> 
+          <br>
+            <h2>Conclusions</h2>
+            <p>The model was difficult to improve beyond the initial cross-validation score of 0.73 – even using lemmatization, the td-idf methodology and n-Grams. 
+            The number of features were reduced considerably – almost by a factor of 10 and could have gone much lower with only a minor reduction accuracy. 
+            On larger datasets this would improve the processing time.</p>
+            <!-- <br>
+            <br> -->
+            <p>
+            Perhaps the amount of information contained in a tweet is too small and the critical information is contained in a single word.</p>
+            <img src="../static/assets/images/coefficients.png" alt="Coefficients">
+            <p>The above visualization shows the most significant tokens with their model coefficients.</p>
+            <br>
+            <!-- <br> -->
+            <!-- <hr> -->
+            <h2>Acknowledgements</h2>
+            <br>
+            <h5>Data Source</h5>
+            <p>The dataset for the <a href="https://www.kaggle.com/c/nlp-getting-started/overview" target="_blank">Kaggle competition</a> <i>Natural Language Processing with Disaster Tweets</i> was created by the company figure-eight. The original dataset was shared on their website found <a href="https://appen.com/open-source-datasets/" target="_blank">here.</a></p>
+            <br>
+            <h5>Technology Used</h5>
+            <ul class="tech">
+              <li>Scikit-Learn</li>
+              <li>Python Pandas</li>
+              <li>Python Matplotlib</li>
+              <li>HTML/CSS/Bootstrap</li>
+              <li>Flask</li>
+              <li>Heroku</li>
+            </ul>
+
+
+
+          </div>
         </div>
-      </div>
     </div>
     
     <!-- side navigation -->
     <div class="container-fluid my-container vis-side-navigation">
-      <div class="row">
-        <!-- <div class="col-lg-12 col-md-12 col-sm-12">
-          <h2>Visualizations</h2>
-          <hr>
-        </div> -->
-      </div>
 
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-3 col-3">
           <a href="#"><img src="../static/assets/tweet_screenshot.png" alt="Fig 1"></a>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-3 col-3">
-          <a href="#"><img src="../assets/images/Fig2.png" alt="Fig 2"></a>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-3 col-3">
-          <a href="#"><img src="../assets/images/Fig3.png" alt="Fig 3"></a>
-        </div>  
+        <p>
+          The image above is an example of a tweet where the word "ABLAZE" is used metaphorically. With a visual aid, it is clear to a 
+          human eye that this is not a disaster. However to a machine, this may be less clear. 
+        </p>
+        <hr>
 
-      </div>
-    </div>
+        <p>
+        <a href="https://twitter.com/AnyOtherAnnaK/status/629195955506708480" target="_blank">Tweet Source<a>
+        </p>
+
+      <!-- </div>
+    </div> -->
   </main>
 
 
